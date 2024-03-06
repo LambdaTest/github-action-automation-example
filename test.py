@@ -23,9 +23,7 @@ class FirstSampleTest(unittest.TestCase):
         lt_options["name"] = 'Python Demo Test';
         lt_options["selenium_version"] = "4.0.0";
         lt_options["w3c"] = True;
-        lt_options["tunnel"] = True;
         lt_options["network"] = 'true';
-        lt_options["smartUI.project"] = 'smartUI';
         options.set_capability('LT:Options', lt_options);
         
         self.driver = webdriver.Remote(
