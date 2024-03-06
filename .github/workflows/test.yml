@@ -1,0 +1,39 @@
+name: Java Build and Test
+
+on:
+  push:
+    branches:
+      - main # Change this to the main branch of your repository
+
+jobs:
+  build-and-test:
+    runs-on: mac-latest # You can change the runner platform if needed
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt' # Specify the distribution, e.g., 'adopt', 'adopt-openj9', or 'corretto'
+        architecture: 'x64'
+        server-id: github
+        server-username: ${{ github.actor }}
+        server-password: ${{ secrets.GITHUB_TOKEN }}
+        overwrite-settings: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # Specifies to use Python 3.x
+
+    - name: Install dependencies
+      run: python -m pip install --upgrade pip setuptools wheel
+
+    - name: Execute test.py
+      env: # Define environment variables using secrets
+        LT_USERNAME: ${{ secrets.LT_USERNAME }} # Use the secret for the LambdaTest username
+        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }} # Use the secret for the LambdaTest access key
+      run: python test.py
