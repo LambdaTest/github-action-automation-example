@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: mac-latest # You can change the runner platform if needed
+    runs-on: macos-latest # You can change the runner platform if needed
 
     steps:
     - name: Checkout code
