@@ -1,4 +1,4 @@
-# Run GitHub Actions Automation Tests on TestMu AI (Formerly LambdaTest)
+﻿# Run GitHub Actions Automation Tests on TestMu AI (Formerly LambdaTest)
 
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
@@ -17,7 +17,7 @@ With TestMu AI (Formerly LambdaTest), you can run GitHub Actions automation test
 
 ### Prerequisites
 
-- A [TestMu AI account](https://www.testmuai.com/register/). Retrieve your **Username** and **Access Key** from the [TestMu AI Automation Dashboard](https://automation.testmuai.com/).
+- A TestMu AI account. Retrieve your **Username** and **Access Key** from the TestMu AI Automation Dashboard.
 - Python 3.x installed.
 - A GitHub account with access to GitHub Actions.
 
